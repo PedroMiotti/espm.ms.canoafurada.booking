@@ -1,4 +1,4 @@
-package br.espm.booking;
+package br.espm.canoafurada.booking;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
@@ -28,29 +28,39 @@ public class BookingEntity {
     @Type(type = "org.hibernate.type.UUIDCharType")
     private UUID id;
 
-    @Column(name = "idCabin", nullable = false)
-    private UUID idCabin;
+    @Column(name = "id_cabin", nullable = false, columnDefinition = "char(36)")
+    private String idCabin;
 
-    @Column(name = "reservedDate", nullable = false)
-    private Date reserverdDate;
+    @Column(name = "id_user", nullable = false, columnDefinition = "char(36)")
+    private String idUser;
 
-    @Column(name = "totalTravelers", nullable = false)
+    @Column(name = "reserved_date", nullable = false)
+    private java.sql.Date reserverdDate;
+
+    @Column(name = "total_travelers", nullable = false)
     private int totalTravelers;
 
+    public String getIdUser() {
+        return idUser;
+    }
 
-    public UUID getIdCabin() {
+    public void setIdUser(String idUser) {
+        this.idUser = idUser;
+    }
+
+    public String getIdCabin() {
         return idCabin;
     }
 
-    public void setIdCabin(UUID idCabin) {
+    public void setIdCabin(String idCabin) {
         this.idCabin = idCabin;
     }
 
-    public Date getReserverdDate() {
+    public java.sql.Date getReserverdDate() {
         return reserverdDate;
     }
 
-    public void setReserverdDate(Date reserverdDate) {
+    public void setReserverdDate(java.sql.Date reserverdDate) {
         this.reserverdDate = reserverdDate;
     }
 
@@ -66,6 +76,7 @@ public class BookingEntity {
         var booking = new BookingDto();
         booking.setId(id);
         booking.setIdCabin(idCabin);
+        booking.setIdUser(idUser);
         booking.setReservedDate(reserverdDate);
         booking.setTotalTravelers(totalTravelers);
 

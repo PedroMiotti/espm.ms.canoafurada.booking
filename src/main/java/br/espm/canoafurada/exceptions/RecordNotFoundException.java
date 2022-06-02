@@ -1,4 +1,4 @@
-package br.espm.booking.exceptions;
+package br.espm.canoafurada.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

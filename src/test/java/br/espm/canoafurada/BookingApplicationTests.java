@@ -1,4 +1,4 @@
-package br.espm.booking;
+package br.espm.canoafurada;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
